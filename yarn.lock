@@ -4335,10 +4335,10 @@ babel-plugin-polyfill-regenerator@^0.4.0, babel-plugin-polyfill-regenerator@^0.4
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.3.3"
 
-badkidsjs@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/badkidsjs/-/badkidsjs-1.4.0.tgz#731057c7227c52bc913f5ccff7167a66b5b73342"
-  integrity sha512-CMHFfgrCKULMr+MltNcpDFfJt9OZ5SC3E90LUU+lHwItMRaQMKFx1AGrSx96Ob694m/1tgQf7I9WgcXOlQwgZA==
+badkidsjs@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/badkidsjs/-/badkidsjs-1.4.2.tgz#971667eebbee8e7f34dd21bd5a3591a39e4d2263"
+  integrity sha512-dgqXdoi2PwH2NFo5u1OZ5f9PCy2M3uEkjnz5a8c7jnVgvp6QG0klU60DD3xSoL4fvIsl6Vd1Pndgsrbr1iC2pQ==
   dependencies:
     "@babel/runtime" "^7.19.4"
     "@cosmjs/amino" "0.29.5"

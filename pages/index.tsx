@@ -54,25 +54,25 @@ const ContractComponent = ({ children }: { children: any }) => {
   );
 };
 
-const RenderBalance = () => {
-  const { hackCw20 } = useContracts();
-  const { address, status } = useChain(chainName);
-  const [cw20Bal, setCw20Bal] = useState<string | null>(null);
+// const RenderBalance = () => {
+//   const { hackCw20 } = useContracts();
+//   const { address, status } = useChain(chainName);
+//   const [cw20Bal, setCw20Bal] = useState<string | null>(null);
 
-  if (status === 'Connected' && hackCw20.cosmWasmClient) {
-    const client = hackCw20.getQueryClient(cw20ContractAddress);
-    client.balance({ address }).then((b) => setCw20Bal(b.balance));
-  }
+//   if (status === 'Connected' && hackCw20.cosmWasmClient) {
+//     const client = hackCw20.getQueryClient(cw20ContractAddress);
+//     client.balance({ address }).then((b) => setCw20Bal(b.balance));
+//   }
 
-  return (
-    <Box w="full" maxW="md" mx="auto">
-      <HackCw20
-        balance={cw20Bal}
-        isConnectWallet={status !== WalletStatus.Disconnected}
-      />
-    </Box>
-  );
-}
+//   return (
+//     <Box w="full" maxW="md" mx="auto">
+//       <HackCw20
+//         balance={cw20Bal}
+//         isConnectWallet={status !== WalletStatus.Disconnected}
+//       />
+//     </Box>
+//   );
+// }
 
 const BadKidsContracts = () => {
   const { badKids, sg721Updatable } = useContracts();
@@ -146,7 +146,7 @@ const Layout = () => {
 
       <WalletSection />
 
-      {status === 'Connected' ? <RenderBalance /> : <div>connecting...</div>}
+      {status === 'Connected' ? <BadKidsContracts /> : <div>connecting...</div>}
 
       <Box my={20}>
         <Divider />
