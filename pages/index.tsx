@@ -18,7 +18,7 @@ import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
 import { useChain } from '@cosmos-kit/react';
 import { WalletStatus } from '@cosmos-kit/core';
 
-import { ContractsProvider, useContracts } from '../codegen/contracts-context';
+import { ContractsProvider, useContracts } from 'badkidsjs';
 
 import {
   chainName,
@@ -70,6 +70,27 @@ const RenderBalance = () => {
         balance={cw20Bal}
         isConnectWallet={status !== WalletStatus.Disconnected}
       />
+    </Box>
+  );
+}
+
+const BadKidsContracts = () => {
+  const { badKids, sg721Updatable } = useContracts();
+  const { address, status } = useChain(chainName);
+  const [cw20Bal, setCw20Bal] = useState<string | null>(null);
+
+  if (status === 'Connected' && badKids.cosmWasmClient) {
+    const badKidsClient = badKids.getQueryClient(cw20ContractAddress);
+
+    // something like this
+    // badKidsClient.transferNft({ 
+    //   queryId: 2
+    // })
+  }
+
+  return (
+    <Box w="full" maxW="md" mx="auto">
+      Hello
     </Box>
   );
 }
